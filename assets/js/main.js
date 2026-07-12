@@ -17,7 +17,7 @@
     email: "thesaplingco@gmail.com",
     whatsapp: "https://wa.me/918902262452",
     instagram: "https://instagram.com/thesaplingco",
-    maps: "https://maps.app.goo.gl/BWgZULFZqcSqRs946"
+    maps: "https://maps.app.goo.gl/GqNG1w4HRkcFBBSw9"
   };
 
   var NAV = [
@@ -171,7 +171,7 @@
           '<div class="footer-contact">' +
             '<a href="tel:' + BIZ.phoneTel + '">' + svg("phone") + BIZ.phoneDisplay + "</a>" +
             '<a href="mailto:' + BIZ.email + '">' + svg("mail") + BIZ.email + "</a>" +
-            '<a href="' + BIZ.maps + '" target="_blank" rel="noopener">' + svg("mapPin") + "Uttarpara, Hooghly, WB</a>" +
+            '<a href="' + BIZ.maps + '" target="_blank" rel="noopener">' + svg("mapPin") + "Raghunathpur, Dankuni, Hooghly</a>" +
           "</div>" +
         "</div>" +
       "</div>" +

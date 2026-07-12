@@ -50,8 +50,8 @@
       "ইনডোর গাছ, <span class=\"accent\">দুর্লভ ফলের চারা</span> আর ফুলের গাছের সবচেয়ে ভালোবাসার ঠিকানা।"
     ],
     hero_sub: [
-      "Grown fresh in our own Uttarpara nursery and delivered to your door. We're not a warehouse — we're a real nursery, where every sapling is watched, watered, and loved.",
-      "আমাদের নিজের উত্তরপাড়ার নার্সারিতে হাতে গড়া, আপনার দরজায় পৌঁছে দেওয়া। আমরা কোনো গুদাম নই — সত্যিকারের এক নার্সারি, যেখানে প্রতিটি চারাকে চোখে চোখে রেখে, জল দিয়ে, ভালোবেসে বড় করা হয়।"
+      "Grown fresh in our own Dankuni nursery and delivered to your door. We're not a warehouse — we're a real nursery, where every sapling is watched, watered, and loved.",
+      "আমাদের নিজের ডানকুনির নার্সারিতে হাতে গড়া, আপনার দরজায় পৌঁছে দেওয়া। আমরা কোনো গুদাম নই — সত্যিকারের এক নার্সারি, যেখানে প্রতিটি চারাকে চোখে চোখে রেখে, জল দিয়ে, ভালোবেসে বড় করা হয়।"
     ],
     hero_t1: ["Grown in-house", "নিজেদের হাতে গড়া"],
     hero_t2: ["Hand-packed", "যত্নে প্যাক করা"],
@@ -74,15 +74,15 @@
 
     slide_visit_eyebrow: ["Come say hello", "একবার ঘুরে যান"],
     slide_visit_title: ["Visit Our Nursery", "আমাদের নার্সারিতে আসুন"],
-    slide_visit_sub: ["Raghunathpur Naskarpara, Uttarpara, Hooghly — West Bengal. Pick your own plants.", "রঘুনাথপুর নস্করপাড়া, উত্তরপাড়া, হুগলি — পশ্চিমবঙ্গ। নিজে হাতে বেছে নিন আপনার গাছ।"],
+    slide_visit_sub: ["Come pick your own plants — you're always welcome.", "নিজে এসে বেছে নিন আপনার গাছ — সবসময় স্বাগত।"],
     slide_visit_cta: ["Get directions", "পথনির্দেশ দেখুন"],
 
     // ---- Story ----
     story_eyebrow: ["Our story", "আমাদের কথা"],
     story_title: ["A real nursery, rooted in Bengal", "বাংলার মাটিতে শিকড় গাঁথা এক সত্যিকারের নার্সারি"],
     story_p1: [
-      "The Sapling Co. was born from a simple belief — that every home deserves a living, breathing plant. Founded in Uttarpara, West Bengal, we are a nursery rooted in Bengal's fertile soil and rich tradition of nature.",
-      "একটাই বিশ্বাস থেকে দ্য স্যাপলিং কো.-র জন্ম — প্রতিটি ঘরেই থাকুক একটুকরো প্রাণবন্ত সবুজ। উত্তরপাড়া, পশ্চিমবঙ্গে গড়ে ওঠা আমাদের নার্সারির শিকড় বাংলার উর্বর মাটি আর প্রকৃতির চিরকালীন ঐতিহ্যে।"
+      "The Sapling Co. was born from a simple belief — that every home deserves a living, breathing plant. Founded in Dankuni, Hooghly, West Bengal, we are a nursery rooted in Bengal's fertile soil and rich tradition of nature.",
+      "একটাই বিশ্বাস থেকে দ্য স্যাপলিং কো.-র জন্ম — প্রতিটি ঘরেই থাকুক একটুকরো প্রাণবন্ত সবুজ। ডানকুনি, হুগলিতে গড়ে ওঠা আমাদের নার্সারির শিকড় বাংলার উর্বর মাটি আর প্রকৃতির চিরকালীন ঐতিহ্যে।"
     ],
     story_p2: [
       "Every plant we grow is nurtured by hand, packed with care, and shipped across India so it arrives healthy, fresh, and ready to thrive in your space.",
@@ -180,8 +180,8 @@
     del_eyebrow: ["Local delivery", "স্থানীয় ডেলিভারি"],
     del_title: ["Home delivery near the nursery", "নার্সারির কাছে বাড়িতে ডেলিভারি"],
     del_sub: [
-      "We currently offer local home delivery around our Uttarpara nursery at simple, honest rates (added to your order). Pan-India shipping is coming soon.",
-      "এখন আমরা উত্তরপাড়া নার্সারির আশপাশে সহজ, সৎ দামে স্থানীয় ডেলিভারি দিই (অর্ডারের সঙ্গে যোগ হয়)। সারা ভারতে ডেলিভারি শীঘ্রই আসছে।"
+      "We currently offer local home delivery around our Dankuni nursery at simple, honest rates (added to your order). Pan-India shipping is coming soon.",
+      "এখন আমরা ডানকুনি নার্সারির আশপাশে সহজ, সৎ দামে স্থানীয় ডেলিভারি দিই (অর্ডারের সঙ্গে যোগ হয়)। সারা ভারতে ডেলিভারি শীঘ্রই আসছে।"
     ],
     del_within2: ["Within 2 km", "২ কিমি-র মধ্যে"],
     del_within4: ["Within 4 km", "৪ কিমি-র মধ্যে"],
@@ -191,7 +191,7 @@
     visit_title: ["Come see what we grow", "দেখে যান আমরা কী ফলাই"],
     visit_p: ["You're always welcome to visit in person and pick your own plants. Find us at:", "সবসময় স্বাগত — নিজে এসে বেছে নিন আপনার গাছ। আমাদের ঠিকানা:"],
     map_b: ["The Sapling Co. Nursery", "দ্য স্যাপলিং কো. নার্সারি"],
-    map_s: ["Uttarpara, Hooghly · Tap to load map", "উত্তরপাড়া, হুগলি · ম্যাপ দেখতে ট্যাপ করুন"],
+    map_s: ["Raghunathpur, Dankuni, Hooghly · Tap to load map", "রঘুনাথপুর, ডানকুনি, হুগলি · ম্যাপ দেখতে ট্যাপ করুন"],
 
     // ---- Review ----
     review_h: ["Loved our plants or our service?", "আমাদের গাছ বা সেবা ভালো লেগেছে?"],
@@ -214,8 +214,8 @@
     about_sub: ["Grown by hand · Delivered with love", "হাতে গড়া · ভালোবেসে পৌঁছে দেওয়া"],
     inv_h1: ["Explore what we grow", "দেখুন আমরা কী ফলাই"],
     inv_p: [
-      "From everyday favourites to rare collector's plants, our nursery in Uttarpara is home to a wide and ever-growing collection. Click into a category to browse the full list — and if you don't see exactly what you're looking for, request it. We probably have it, or can grow it for you.",
-      "রোজকার প্রিয় গাছ থেকে সংগ্রাহকের দুর্লভ গাছ — উত্তরপাড়ার আমাদের নার্সারিতে রয়েছে বিশাল ও ক্রমবর্ধমান এক সংগ্রহ। যেকোনো বিভাগে ঢুকে পুরো তালিকা দেখুন — আর ঠিক যা খুঁজছেন তা না পেলে বলুন; সম্ভবত আমাদের কাছে আছে, বা আপনার জন্য জোগাড় করে দিতে পারি।"
+      "From everyday favourites to rare collector's plants, our nursery in Dankuni is home to a wide and ever-growing collection. Click into a category to browse the full list — and if you don't see exactly what you're looking for, request it. We probably have it, or can grow it for you.",
+      "রোজকার প্রিয় গাছ থেকে সংগ্রাহকের দুর্লভ গাছ — ডানকুনির আমাদের নার্সারিতে রয়েছে বিশাল ও ক্রমবর্ধমান এক সংগ্রহ। যেকোনো বিভাগে ঢুকে পুরো তালিকা দেখুন — আর ঠিক যা খুঁজছেন তা না পেলে বলুন; সম্ভবত আমাদের কাছে আছে, বা আপনার জন্য জোগাড় করে দিতে পারি।"
     ],
     inv_cant_h: ["Can't find it?", "খুঁজে পাচ্ছেন না?"],
     inv_cant_p: ["We grow far more than we can list. Tell us what you're after and we'll track it down.", "তালিকায় যা আছে, তার চেয়ে অনেক বেশি গাছ আমরা ফলাই। কী চাই বলুন, খুঁজে বের করে দেব।"],
@@ -242,7 +242,7 @@
     inv_cat_word: ["Plant categories", "গাছের বিভাগ"],
     journey_eyebrow: ["From our soil to your home", "আমাদের মাটি থেকে আপনার ঘরে"],
     journey_title: ["How your plant reaches you", "আপনার গাছ কীভাবে পৌঁছয়"],
-    step1_t: ["Grown", "যত্নে গড়া"], step1_p: ["Nurtured by hand in our Uttarpara nursery.", "আমাদের উত্তরপাড়া নার্সারিতে হাতে হাতে বড় করা।"],
+    step1_t: ["Grown", "যত্নে গড়া"], step1_p: ["Nurtured by hand in our Dankuni nursery.", "আমাদের ডানকুনি নার্সারিতে হাতে হাতে বড় করা।"],
     step2_t: ["Packed", "প্যাক করা"], step2_p: ["Wrapped in coco peat and a cushioned box.", "কোকো পিট আর cushioned box-এ মুড়ে।"],
     step3_t: ["Shipped", "পাঠানো"], step3_p: ["Sent via trusted couriers, arriving in 4–6 days.", "বিশ্বস্ত courier-এ, ৪–৬ দিনে পৌঁছয়।"],
     step4_t: ["Thrives", "বেড়ে ওঠা"], step4_p: ["Settles into your home with a printed care card.", "একটা printed care card সহ আপনার ঘরে থিতু হয়।"],
@@ -257,7 +257,7 @@
     ship_pack_2: ["Wrapped in newspaper cushioning to protect leaves and stems", "পাতা আর ডাল বাঁচাতে খবরের কাগজের cushioning-এ মোড়া"],
     ship_pack_3: ["Boxed in a sturdy corrugated carton, clearly marked as a live plant", "মজবুত corrugated box-এ, স্পষ্ট করে ‘live plant’ লেখা"],
     ship_local_h: ["Local home delivery", "লোকাল হোম ডেলিভারি"],
-    ship_local_p: ["Around our Uttarpara nursery we currently offer local home delivery at simple, honest rates (added to your order):", "উত্তরপাড়া নার্সারির আশপাশে আমরা এখন সহজ, সৎ rate-এ লোকাল হোম ডেলিভারি দিই (অর্ডারের সঙ্গে যোগ হয়):"],
+    ship_local_p: ["Around our Dankuni nursery we currently offer local home delivery at simple, honest rates (added to your order):", "ডানকুনি নার্সারির আশপাশে আমরা এখন সহজ, সৎ rate-এ লোকাল হোম ডেলিভারি দিই (অর্ডারের সঙ্গে যোগ হয়):"],
     ship_time_h: ["Delivery time", "ডেলিভারির সময়"],
     ship_time_p: ["Once pan-India shipping launches:", "সারা ভারতে shipping চালু হলে:"],
     ship_time_1: ["Orders are dispatched within 1–2 business days of confirmation", "confirm হওয়ার ১–২ business day-র মধ্যে order dispatch হয়"],
