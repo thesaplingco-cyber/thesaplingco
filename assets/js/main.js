@@ -212,19 +212,23 @@
     if (!root) return;
     var slides = Array.prototype.slice.call(root.querySelectorAll(".hero-slide"));
     if (slides.length < 2) { if (slides[0]) playVideoIn(slides[0]); return; }
-    var idx = 0, timer = null;
+    var idx = 0;
     var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var DUR = 6500;
+    var DUR = 5000, timer = null, startTs = 0, remaining = DUR, paused = false;
+    function nowMs() { return (window.performance && performance.now) ? performance.now() : Date.now(); }
+    function clearTimer() { if (timer) { clearTimeout(timer); timer = null; } }
 
     var dotsWrap = root.querySelector(".hero-dots");
     slides.forEach(function (s, i) {
       var d = document.createElement("button");
       d.className = "hero-dot"; d.type = "button";
       d.setAttribute("aria-label", "Go to slide " + (i + 1));
-      d.addEventListener("click", function () { go(i, true); });
+      d.innerHTML = '<span class="hero-dot__fill"></span>';
+      d.addEventListener("click", function () { go(i); });
       dotsWrap.appendChild(d);
     });
     var dots = Array.prototype.slice.call(dotsWrap.children);
+    var fills = dots.map(function (d) { return d.querySelector(".hero-dot__fill"); });
 
     function playVideoInner(s) {
       var v = s.querySelector("video");
@@ -233,30 +237,56 @@
     function stopVideos() { root.querySelectorAll("video").forEach(function (v) { try { v.pause(); } catch (e) {} }); }
 
     function show(i) {
-      slides.forEach(function (s, k) { s.classList.toggle("is-active", k === i); });
-      dots.forEach(function (d, k) { d.classList.toggle("is-active", k === i); d.setAttribute("aria-current", k === i ? "true" : "false"); });
+      idx = (i + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle("is-active", k === idx); });
+      dots.forEach(function (d, k) {
+        d.classList.toggle("is-active", k === idx);
+        d.setAttribute("aria-current", k === idx ? "true" : "false");
+        fills[k].classList.remove("run");
+        fills[k].style.animationPlayState = "";
+      });
       stopVideos();
-      playVideoInner(slides[i]);
-      idx = i;
+      playVideoInner(slides[idx]);
     }
-    function go(i, manual) { show((i + slides.length) % slides.length); if (manual) restart(); }
-    function next() { go(idx + 1); }
-    function start() { if (reduce) return; stop(); timer = setInterval(next, DUR); }
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    function restart() { stop(); start(); }
+    // Start the 5s countdown on the active dot: CSS animates the fill, a timer
+    // is the authoritative trigger to advance. Both pause/resume together.
+    function runProgress() {
+      if (reduce) return;
+      paused = false; remaining = DUR;
+      var f = fills[idx];
+      f.style.animationPlayState = "running";
+      f.classList.remove("run"); void f.offsetWidth; f.classList.add("run");
+      startTs = nowMs();
+      clearTimer(); timer = setTimeout(advance, DUR);
+    }
+    function advance() { show(idx + 1); runProgress(); }
+    function go(i) { show(i); runProgress(); }
+    function pause() {
+      if (reduce || paused || !timer) return;
+      paused = true; clearTimer();
+      remaining = Math.max(0, DUR - (nowMs() - startTs));
+      var f = fills[idx]; if (f) f.style.animationPlayState = "paused";
+    }
+    function resume() {
+      if (reduce || !paused) return;
+      paused = false;
+      var f = fills[idx]; if (f) f.style.animationPlayState = "running";
+      startTs = nowMs() - (DUR - remaining);
+      clearTimer(); timer = setTimeout(advance, remaining);
+    }
 
     var prev = root.querySelector("[data-hero-prev]"), nxt = root.querySelector("[data-hero-next]");
-    if (prev) prev.addEventListener("click", function () { go(idx - 1, true); });
-    if (nxt) nxt.addEventListener("click", function () { go(idx + 1, true); });
+    if (prev) prev.addEventListener("click", function () { go(idx - 1); });
+    if (nxt) nxt.addEventListener("click", function () { go(idx + 1); });
 
-    root.addEventListener("mouseenter", stop);
-    root.addEventListener("mouseleave", start);
-    root.addEventListener("focusin", stop);
-    root.addEventListener("focusout", start);
-    document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+    root.addEventListener("mouseenter", pause);
+    root.addEventListener("mouseleave", resume);
+    root.addEventListener("focusin", pause);
+    root.addEventListener("focusout", resume);
+    document.addEventListener("visibilitychange", function () { document.hidden ? pause() : resume(); });
 
     show(0);
-    start();
+    runProgress();
   }
   function playVideoIn(s) { var v = s.querySelector("video"); if (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
 
