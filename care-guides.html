@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plant Care Guides — Grow Healthy Plants | The Sapling Co.</title>
+  <meta name="description" content="Simple, practical plant care guides from The Sapling Co. — money plant care, yellow leaves, growing Miyazaki mango in a container, hibiscus blooms, low-maintenance indoor plants and more.">
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Plant Care Guides — The Sapling Co.">
+  <meta property="og:description" content="Practical, jargon-free plant care advice for Indian homes.">
+  <meta property="og:image" content="assets/images/logo/logo-square.png">
+  <meta name="theme-color" content="#0B1E12">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    (function () { var d = document.documentElement; d.classList.add("js");
+      try { var t = localStorage.getItem("sapling-theme"); if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; d.setAttribute("data-theme", t); } catch (e) { d.setAttribute("data-theme", "light"); }
+      try { var l = localStorage.getItem("sapling-lang"); d.classList.add(l === "bn" ? "lang-bn" : "lang-en"); if (l === "bn") d.setAttribute("lang", "bn"); } catch (e) {} })();
+  </script>
+</head>
+<body data-page="care">
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 12C8 12 5 9 5 5c4 0 7 3 7 7z"/><path d="M12 10c0-3 2.5-5.5 7-5.5 0 4-3 5.5-7 5.5z"/></svg></div>
+    <span class="preloader__name">The Sapling Co.</span>
+  </div>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="page-head page-head--photo">
+      <div class="band-photo" style="background-image:url('assets/images/guide-hero.jpg')"></div>
+      <div class="container page-head__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="nav_home"></a><span data-icon="chevronRight"></span><span aria-current="page" data-i18n="nav_care"></span>
+        </nav>
+        <h1 data-i18n="care_h1"></h1>
+        <p data-i18n="care_sub"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="searchbar">
+          <span data-icon-lead="search"></span>
+          <label class="visually-hidden" for="guide-search">Search care guides</label>
+          <input id="guide-search" type="search" placeholder="Search guides — e.g. yellow leaves, money plant…" data-i18n-ph="care_search_ph" autocomplete="off">
+        </div>
+        <div class="filter-pills" role="group" aria-label="Filter guides by category">
+          <button class="pill" data-cat="all" aria-pressed="true" data-i18n="pill_all">All</button>
+          <button class="pill" data-cat="indoor" aria-pressed="false" data-i18n="pill_indoor">Indoor</button>
+          <button class="pill" data-cat="fruit" aria-pressed="false" data-i18n="pill_fruit">Fruit</button>
+          <button class="pill" data-cat="flowering" aria-pressed="false" data-i18n="pill_flowering">Flowering</button>
+          <button class="pill" data-cat="troubleshooting" aria-pressed="false" data-i18n="pill_trouble">Troubleshooting</button>
+        </div>
+
+        <div class="grid grid-3" id="guide-grid">
+          <article class="card article-card article-featured reveal" data-cats="indoor" style="grid-column:1 / -1">
+            <div class="article-card__media"><img src="assets/images/guide-money-plant.jpg" alt="A trailing money plant in a pot" loading="lazy"></div>
+            <div class="article-card__body">
+              <span class="article-card__cat" data-i18n="g_feat_cat">Featured · Indoor</span>
+              <h3 data-i18n="g1_t">The complete Money Plant care guide</h3>
+              <p data-i18n="g1_p">Light, watering, propagation and the common mistakes that hold this easy, air-purifying plant back — everything you need to keep your Money Plant lush and trailing.</p>
+              <span class="cat-card__cta" data-i18n="tag_full_guide_soon"></span>
+            </div>
+          </article>
+
+          <article class="card article-card reveal" data-cats="troubleshooting">
+            <div class="article-card__media"><img src="assets/images/guide-yellow-leaves.jpg" alt="A plant leaf turning yellow" loading="lazy"></div>
+            <div class="article-card__body"><span class="article-card__cat" data-i18n="pill_trouble">Troubleshooting</span><h3 data-i18n="g2_t">Why are my plant's leaves turning yellow?</h3><p data-i18n="g2_p">The #1 plant problem, decoded — overwatering, light and how to bring leaves back.</p><span class="cat-card__cta" data-i18n="tag_coming_soon"></span></div>
+          </article>
+
+          <article class="card article-card reveal" data-cats="fruit">
+            <div class="article-card__media"><img src="assets/images/guide-mango.jpg" alt="Green mangoes growing on a tree" loading="lazy"></div>
+            <div class="article-card__body"><span class="article-card__cat" data-i18n="pill_fruit">Fruit</span><h3 data-i18n="g3_t">Growing Miyazaki Mango in a container</h3><p data-i18n="g3_p">How to grow the world's most prized mango on a terrace or balcony.</p><span class="cat-card__cta" data-i18n="tag_coming_soon"></span></div>
+          </article>
+
+          <article class="card article-card reveal" data-cats="flowering">
+            <div class="article-card__media"><img src="assets/images/guide-hibiscus.jpg" alt="A red hibiscus flower" loading="lazy"></div>
+            <div class="article-card__body"><span class="article-card__cat" data-i18n="pill_flowering">Flowering</span><h3 data-i18n="g4_t">Make your Hibiscus bloom all season</h3><p data-i18n="g4_p">Feeding, pruning and light tricks to keep those big tropical blooms coming.</p><span class="cat-card__cta" data-i18n="tag_coming_soon"></span></div>
+          </article>
+
+          <article class="card article-card reveal" data-cats="indoor">
+            <div class="article-card__media"><img src="assets/images/guide-low-maintenance.jpg" alt="Easy-care indoor plants" loading="lazy"></div>
+            <div class="article-card__body"><span class="article-card__cat" data-i18n="pill_indoor">Indoor</span><h3 data-i18n="g5_t">Best low-maintenance indoor plants for Indian homes</h3><p data-i18n="g5_p">The toughest, prettiest plants for busy homes and low-light corners.</p><span class="cat-card__cta" data-i18n="tag_coming_soon"></span></div>
+          </article>
+
+          <article class="card article-card reveal" data-cats="troubleshooting indoor">
+            <div class="article-card__media"><img src="assets/images/guide-travel.jpg" alt="A potted plant being cared for" loading="lazy"></div>
+            <div class="article-card__body"><span class="article-card__cat" data-i18n="pill_trouble">Troubleshooting</span><h3 data-i18n="g6_t">How to keep plants alive while travelling</h3><p data-i18n="g6_p">Simple ways to keep plants happy while you're away for days or weeks.</p><span class="cat-card__cta" data-i18n="tag_coming_soon"></span></div>
+          </article>
+        </div>
+        <p class="no-results" id="guide-empty" data-i18n-html="care_empty">No guides match that search yet — try a different word, or <a href="contact.html" style="color:var(--accent);font-weight:600">ask us directly</a>.</p>
+
+        <div class="call-band mt-4 reveal" style="text-align:center">
+          <span class="eyebrow" data-i18n="care_ask_eyebrow"></span>
+          <h2 class="section-title" style="margin:.4rem 0 .6rem" data-i18n="care_ask_title"></h2>
+          <p style="color:var(--text-muted);max-width:52ch;margin:0 auto 1.2rem" data-i18n="care_ask_p"></p>
+          <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn--primary" href="contact.html" data-i18n="btn_contact_us"></a>
+            <a class="btn btn--secondary" href="https://wa.me/918902262452" target="_blank" rel="noopener" data-i18n="btn_whatsapp"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

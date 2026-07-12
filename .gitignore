@@ -1,0 +1,37 @@
+# --- Raw source media (optimized copies live under assets/) ---
+Hero Image.mp4
+Indoor plants.mp4
+flower 1.jpg
+flower 2.jpg
+flower 3.jpg
+flower 4.jpg
+inventory photo 1.jpg
+inventory photo 2.jpg
+inventory photo 3.jpg
+inventory photo 4.jpg
+litchi.jpg
+jackfruit.jpg
+mango.jpg
+Guava.jpg
+care guide.jpg
+get in touch.jpg
+
+# --- Original root logos (copies in assets/images/logo/) ---
+sapling-logo-transparent.png
+sapling-logo-rectangle-green.png
+sapling-logo-square-green.png
+
+# --- Internal planning / handoff docs ---
+claude-code-handoff-message.md
+sapling-co-full-website-spec-for-claude-code.md
+the-sapling-co-build-spec.md
+the-sapling-co-website-copy.md
+nursery-inventory-sapling-co.md
+
+# --- Old design mockups ---
+the_sapling_co_*.html
+
+# --- Tooling / local only ---
+.claude/
+_build/
+_cand/
