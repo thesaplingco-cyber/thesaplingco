@@ -113,8 +113,9 @@
     host.innerHTML =
       '<a class="skip-link" href="#main">Skip to content</a>' +
       '<div class="container header-top">' +
-        '<a class="brand" href="index.html" aria-label="The Sapling Co. — home">' +
+        '<a class="brand" href="index.html" aria-label="The Sapling Co. — A unit of Shefali Nursery, home">' +
           '<img src="assets/images/logo/logo-transparent.png" alt="The Sapling Co." width="180" height="56">' +
+          '<span class="brand__unit" data-i18n="brand_unit">A unit of Shefali Nursery</span>' +
         "</a>" +
         '<nav class="nav-primary" aria-label="Primary">' + navMarkup() + "</nav>" +
         '<div class="header-actions">' +

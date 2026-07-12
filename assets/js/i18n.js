@@ -16,6 +16,7 @@
     nav_inventory: ["Our Inventory", "আমাদের সংগ্রহ"],
     nav_care: ["Care Guides", "গাছের যত্ন"],
     nav_contact: ["Contact", "যোগাযোগ"],
+    brand_unit: ["A unit of Shefali Nursery", "শেফালি নার্সারির একটি অংশ"],
 
     // ---- Common buttons / labels ----
     btn_request_sapling: ["Request a Sapling", "চারার জন্য অনুরোধ"],

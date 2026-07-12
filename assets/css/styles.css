@@ -202,9 +202,19 @@ h1, h2, h3, h4 {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; padding-block: .7rem;
 }
-.brand { display: inline-flex; align-items: center; }
+.brand { display: inline-flex; align-items: center; gap: .7rem; }
 .brand img { height: 56px; width: auto; }
-@media (max-width: 560px) { .brand img { height: 46px; } }
+.brand__unit {
+  font-family: var(--font-sans);
+  font-size: .62rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--on-dark-muted); line-height: 1.25; max-width: 12ch;
+  padding-left: .7rem; border-left: 1px solid rgba(251, 250, 246, .28);
+}
+@media (max-width: 560px) {
+  .brand { flex-direction: column; align-items: flex-start; gap: .15rem; }
+  .brand img { height: 40px; }
+  .brand__unit { font-size: .54rem; letter-spacing: .08em; padding-left: 0; border-left: 0; max-width: none; }
+}
 
 .nav-primary { display: flex; align-items: center; gap: .2rem; }
 .nav-primary a {
