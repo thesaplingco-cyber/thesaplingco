@@ -279,10 +279,15 @@
     if (prev) prev.addEventListener("click", function () { go(idx - 1); });
     if (nxt) nxt.addEventListener("click", function () { go(idx + 1); });
 
-    root.addEventListener("mouseenter", pause);
-    root.addEventListener("mouseleave", resume);
-    root.addEventListener("focusin", pause);
-    root.addEventListener("focusout", resume);
+    // Pause only when hovering/focusing the small control bar (dots + arrows) —
+    // NOT the whole hero, which fills the viewport and would keep it "frozen".
+    var ctrls = root.querySelector(".hero-controls") || dotsWrap;
+    if (ctrls) {
+      ctrls.addEventListener("mouseenter", pause);
+      ctrls.addEventListener("mouseleave", resume);
+      ctrls.addEventListener("focusin", pause);
+      ctrls.addEventListener("focusout", resume);
+    }
     document.addEventListener("visibilitychange", function () { document.hidden ? pause() : resume(); });
 
     show(0);
