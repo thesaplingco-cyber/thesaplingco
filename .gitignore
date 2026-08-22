@@ -35,3 +35,12 @@ the_sapling_co_*.html
 .claude/
 _build/
 _cand/
+
+# --- Secrets: NEVER commit ---
+.env
+.env.*
+!.env.example
+service-account*.json
+*.sa.json
+secret/
+scripts/lib/node_modules/
