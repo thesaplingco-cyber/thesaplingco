@@ -9,9 +9,21 @@
    Run after build-store.mjs:   node scripts/gen-store.mjs
    ========================================================================== */
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 const SITE = "https://thesaplingco.in";
 const { products, taxonomy, goals } = JSON.parse(readFileSync("assets/data/catalogue.json", "utf8"));
+
+/* Cache-busting: append a content hash to CSS/JS URLs so a changed file gets a
+   new URL the browser must fetch fresh — regardless of any long browser-cache
+   TTL. Hash only changes when the file changes. */
+const hash = p => { try { return createHash("md5").update(readFileSync(p)).digest("hex").slice(0, 8); } catch { return "0"; } };
+const V = Object.fromEntries([
+  "/assets/css/styles.css", "/assets/css/store.css",
+  "/assets/js/i18n.js", "/assets/js/main.js", "/assets/js/cart.js",
+  "/assets/js/shop.js", "/assets/js/product.js", "/assets/js/cart-page.js",
+].map(p => [p, hash("." + p)]));
+const vhref = p => p + (V[p] ? `?v=${V[p]}` : "");
 
 const escT = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const escA = s => String(s ?? "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -42,8 +54,8 @@ function head({ title, desc, canonical, page = "", jsonld = "" }) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/store.css">${jsonld ? "\n  " + jsonld : ""}
+  <link rel="stylesheet" href="${vhref("/assets/css/styles.css")}">
+  <link rel="stylesheet" href="${vhref("/assets/css/store.css")}">${jsonld ? "\n  " + jsonld : ""}
   ${BOOT}
 </head>
 <body data-page="${page}">
@@ -54,10 +66,10 @@ function head({ title, desc, canonical, page = "", jsonld = "" }) {
 function foot(scripts = []) {
   return `  </main>
   <footer id="site-footer"></footer>
-  <script src="/assets/js/i18n.js" defer></script>
-  <script src="/assets/js/main.js" defer></script>
-  <script src="/assets/js/cart.js" defer></script>
-${scripts.map(s => `  <script src="${s}" defer></script>`).join("\n")}
+  <script src="${vhref("/assets/js/i18n.js")}" defer></script>
+  <script src="${vhref("/assets/js/main.js")}" defer></script>
+  <script src="${vhref("/assets/js/cart.js")}" defer></script>
+${scripts.map(s => `  <script src="${vhref(s)}" defer></script>`).join("\n")}
 </body>
 </html>`;
 }
