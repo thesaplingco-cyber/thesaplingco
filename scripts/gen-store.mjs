@@ -262,7 +262,13 @@ function careFaq(p) {
 function quickFacts(p) {
   const rows = [];
   if (p.botanical) rows.push(["Botanical name", p.botanical]);
-  if (p.searchNames && p.searchNames.toLowerCase() !== p.name.toLowerCase()) rows.push(["Also known as", p.searchNames]);
+  // "Also known as": clean the Common/Search Names of tag/occasion junk + the name itself
+  const aka = (p.searchNames || "").split(",").map(s => s.trim()).filter(Boolean)
+    .filter(s => !/_/.test(s))
+    .filter(s => !s.toLowerCase().startsWith(p.name.toLowerCase()))
+    .filter(s => !/(birthday|gift|hamper|combo|purif|vastu|lucky|feng|indoor|outdoor|low.?light|plant set|set of|online)/i.test(s))
+    .filter((s, i, a) => a.findIndex(x => x.toLowerCase() === s.toLowerCase()) === i);
+  if (aka.length) rows.push(["Also known as", aka.slice(0, 3).join(", ")]);
   if (p.care.matureSize) rows.push(["Mature size", p.care.matureSize]);
   if (p.care.growthRate) rows.push(["Growth rate", p.care.growthRate]);
   if (p.care.containerSuitable) rows.push(["Container / pot", p.care.containerSuitable]);
@@ -338,9 +344,9 @@ function buildProduct(p) {
       </div>
 
       <div class="pdp-section">
-        <h2 data-i18n="pdp_about">About this plant</h2>
         <div class="about-grid">
           <div>
+            <h2 data-i18n="pdp_about">About this plant</h2>
             <p class="pdp-desc">${escT(p.description || p.notes)}</p>
             ${careFaq(p)}
           </div>
