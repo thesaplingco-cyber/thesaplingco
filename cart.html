@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart | The Sapling Co.</title>
+  <meta name="description" content="Review your cart and place your order on WhatsApp.">
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+  <link rel="canonical" href="https://thesaplingco.in/cart.html">
+  <meta name="theme-color" content="#0B1E12">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/store.css">
+  <script>
+    (function () { var d = document.documentElement; d.classList.add("js");
+      try { var t = localStorage.getItem("sapling-theme"); if (!t) t = "light"; d.setAttribute("data-theme", t); } catch (e) { d.setAttribute("data-theme", "light"); }
+      try { var l = localStorage.getItem("sapling-lang"); d.classList.add(l === "bn" ? "lang-bn" : "lang-en"); if (l === "bn") d.setAttribute("lang", "bn"); } catch (e) {} })();
+  </script>
+</head>
+<body data-page="">
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 12C8 12 5 9 5 5c4 0 7 3 7 7z"/><path d="M12 10c0-3 2.5-5.5 7-5.5 0 4-3 5.5-7 5.5z"/></svg></div>
+    <span class="preloader__name">The Sapling Co.</span>
+  </div>
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="section container">
+      <h1 data-i18n="cart_title">Your cart</h1>
+      <div id="cart-empty" class="empty-cart" hidden>
+        <p class="muted" data-i18n="cart_empty">Your cart is empty.</p>
+        <a class="btn btn--primary" href="/shop.html" data-i18n="cart_browse">Browse plants</a>
+      </div>
+      <div id="cart-wrap" class="cart-layout" hidden>
+        <div><div id="cart-lines"></div></div>
+        <aside class="cart-summary">
+          <div class="coupon-row">
+            <input id="coupon" type="text" autocomplete="off" placeholder="Coupon code" data-i18n-ph="cart_coupon_ph">
+            <button class="btn btn--secondary" id="apply-coupon" data-i18n="cart_apply">Apply</button>
+          </div>
+          <p id="coupon-msg" class="coupon-msg"></p>
+          <div class="totals">
+            <div><span data-i18n="cart_subtotal">Subtotal</span><span id="t-subtotal">₹0</span></div>
+            <div id="row-discount" hidden><span data-i18n="cart_discount">Discount</span><span id="t-discount">−₹0</span></div>
+            <div><span data-i18n="cart_delivery">Delivery</span><span class="muted" data-i18n="cart_delivery_tbd">Confirmed on WhatsApp</span></div>
+            <div class="totals__grand"><span data-i18n="cart_total">Total (excl. delivery)</span><span id="t-total">₹0</span></div>
+          </div>
+          <h3 style="margin:1.3rem 0 .7rem" data-i18n="cart_your_details">Your details</h3>
+          <form id="checkout" novalidate>
+            <div class="co-field"><label data-i18n="ord_name"></label><input name="name" required></div>
+            <div class="co-field"><label data-i18n="ord_phone"></label><input name="phone" inputmode="tel" required></div>
+            <label class="chk"><input type="checkbox" name="waSame" checked> <span data-i18n="ord_wa_same"></span></label>
+            <div class="co-field" id="wa-field" hidden><label data-i18n="ord_wa"></label><input name="wa" inputmode="tel"></div>
+            <div class="co-field"><label data-i18n="ord_address"></label><textarea name="address" rows="2" required></textarea></div>
+            <div class="co-field"><label data-i18n="ord_pin"></label><input name="pin" inputmode="numeric" maxlength="6" required></div>
+            <div class="co-field"><label data-i18n="ord_landmark"></label><input name="landmark" ></div>
+            <div class="co-field"><label data-i18n="ord_notes"></label><textarea name="notes" rows="2"></textarea></div>
+          </form>
+          <button class="btn wa-btn btn--block" id="order-wa" style="margin-top:1rem"><span data-icon-lead="whatsapp"></span> <span data-i18n="cart_order_wa">Order on WhatsApp</span></button>
+          <p class="muted" style="font-size:.8rem;margin-top:.5rem;text-align:center" data-i18n="cart_order_hint">We'll confirm stock & delivery on WhatsApp.</p>
+          <div class="delivery-note">
+            <p data-i18n="deliv_confirm">Delivery is confirmed on WhatsApp after we check your PIN code.</p>
+            <ul>
+              <li data-i18n="deliv_local"></li>
+              <li data-i18n="deliv_far"></li>
+              <li data-i18n="deliv_time"></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>  </main>
+  <footer id="site-footer"></footer>
+  <script src="/assets/js/i18n.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/cart.js" defer></script>
+  <script src="/assets/js/cart-page.js" defer></script>
+</body>
+</html>

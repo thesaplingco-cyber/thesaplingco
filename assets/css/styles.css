@@ -713,3 +713,30 @@ html.lang-bn .preloader__name { font-family: var(--font-serif-bn); }
 .call-phone { font-size: clamp(1.4rem, 3vw, 1.95rem); }
 .section-head { margin-bottom: clamp(1.4rem, 3.5vw, 2.2rem); }
 .article-featured h3 { font-size: clamp(1.3rem, 2.4vw, 1.8rem); }
+
+/* ==========================================================================
+   Commerce chrome — site-wide bits injected by main.js (cart badge, search).
+   Page-level shop/product/cart components live in store.css (store pages only).
+   ========================================================================== */
+.cart-link { position: relative; }
+.cart-badge {
+  position: absolute; top: -3px; right: -3px; min-width: 17px; height: 17px;
+  padding: 0 4px; border-radius: var(--radius-pill); background: var(--lime);
+  color: var(--forest-dark); font-size: .62rem; font-weight: 700;
+  display: grid; place-items: center; line-height: 1;
+}
+.search-overlay { position: fixed; inset: 0; z-index: 1100; display: none; }
+.search-overlay.open { display: block; }
+.search-scrim { position: absolute; inset: 0; background: rgba(11,18,14,.5); }
+.search-panel {
+  position: absolute; top: 0; left: 0; right: 0; background: var(--surface);
+  border-bottom: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  padding: clamp(1rem,4vw,1.5rem) var(--gutter);
+  padding-top: max(1rem, env(safe-area-inset-top));
+  animation: searchDrop var(--dur) var(--ease);
+}
+@keyframes searchDrop { from { transform: translateY(-12px); opacity: 0; } to { transform: none; opacity: 1; } }
+.search-row { display: flex; gap: .6rem; align-items: center; max-width: var(--container); margin-inline: auto; }
+.search-panel .searchbar { flex: 1; max-width: none; margin: 0; }
+.search-hint { max-width: var(--container); margin: .55rem auto 0; font-size: .82rem; color: var(--text-muted); }
+@media (prefers-reduced-motion: reduce) { .search-panel { animation: none; } }

@@ -21,11 +21,12 @@
   };
 
   var NAV = [
-    { key: "home", i: "nav_home", href: "index.html" },
-    { key: "about", i: "nav_about", href: "about.html" },
-    { key: "inventory", i: "nav_inventory", href: "inventory.html" },
-    { key: "care", i: "nav_care", href: "care-guides.html" },
-    { key: "contact", i: "nav_contact", href: "contact.html" }
+    { key: "home", i: "nav_home", href: "/" },
+    { key: "shop", i: "nav_shop", href: "/shop.html" },
+    { key: "about", i: "nav_about", href: "/about.html" },
+    { key: "inventory", i: "nav_inventory", href: "/inventory.html" },
+    { key: "care", i: "nav_care", href: "/care-guides.html" },
+    { key: "contact", i: "nav_contact", href: "/contact.html" }
   ];
 
   var CATEGORIES = [
@@ -44,13 +45,16 @@
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
     moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+    cart: '<path d="M6 6h15l-1.6 8.5a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.6L5 3H2"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/>',
+    trash: '<path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/>',
+    filter: '<path d="M3 5h18M6 12h12M10 19h4"/>',
     menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
     x: '<path d="M6 6l12 12M18 6L6 18"/>',
     phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
     mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     mapPin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
     instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1"/>',
-    whatsapp: '<path d="M20.5 12a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.1-4.3A8.5 8.5 0 1 1 20.5 12z"/><path d="M8.6 8.4c-.2.4-.4.9-.1 1.6a7 7 0 0 0 3.3 3.4c.8.3 1.3.2 1.7-.1"/>',
+    whatsapp: '<path d="M17.6 6.31A7.85 7.85 0 0 0 12.04 4a7.94 7.94 0 0 0-6.88 11.9L4 20l4.2-1.1a7.93 7.93 0 0 0 3.79.97h.01a7.94 7.94 0 0 0 5.6-13.56zM12.05 18.54a6.59 6.59 0 0 1-3.36-.92l-.24-.14-2.5.65.67-2.43-.16-.25a6.57 6.57 0 0 1-1.01-3.5 6.59 6.59 0 1 1 6.6 6.59zm3.61-4.93c-.2-.1-1.17-.58-1.35-.64s-.31-.1-.44.1-.51.64-.63.77-.23.15-.42.05a5.4 5.4 0 0 1-1.6-.98 6 6 0 0 1-1.1-1.37c-.11-.2 0-.3.09-.4l.3-.35c.1-.11.13-.2.2-.33a.36.36 0 0 0-.02-.35c-.05-.1-.44-1.07-.6-1.46-.16-.38-.32-.32-.44-.33l-.38-.01a.73.73 0 0 0-.53.25 2.23 2.23 0 0 0-.69 1.65 3.86 3.86 0 0 0 .81 2.05 8.83 8.83 0 0 0 3.38 2.98c.47.2.84.33 1.13.42.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94s.17-.86.12-.94-.18-.14-.38-.24z"/>',
     leaf: '<path d="M11 20A7 7 0 0 1 4 13c0-5 5-9 16-9 0 8-4 13-9 13z"/><path d="M4 20c4-6 7-8 12-9"/>',
     sprout: '<path d="M12 22V10"/><path d="M12 12C12 8 9 5 4 5c0 5 3 7 8 7z"/><path d="M12 10c0-3 2.5-5.5 7-5.5 0 4-3 5.5-7 5.5z"/>',
     box: '<path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>',
@@ -69,7 +73,9 @@
     seedling: '<path d="M12 21v-8"/><path d="M12 13C8 13 5 10 5 6c4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/>'
   };
   function svg(name, cls) {
-    return '<svg ' + A + (cls ? ' class="' + cls + '"' : "") + ' aria-hidden="true">' + (ICONS[name] || "") + "</svg>";
+    // WhatsApp is a filled brand glyph; the rest are stroked line icons.
+    var attrs = name === "whatsapp" ? 'width="24" height="24" viewBox="0 0 24 24" fill="currentColor"' : A;
+    return '<svg ' + attrs + (cls ? ' class="' + cls + '"' : "") + ' aria-hidden="true">' + (ICONS[name] || "") + "</svg>";
   }
 
   /* ---------- Theme ------------------------------------------------------ */
@@ -113,12 +119,14 @@
     host.innerHTML =
       '<a class="skip-link" href="#main">Skip to content</a>' +
       '<div class="container header-top">' +
-        '<a class="brand" href="index.html" aria-label="The Sapling Co. — A unit of Shefali Nursery, home">' +
-          '<img src="assets/images/logo/logo-transparent.png" alt="The Sapling Co." width="180" height="56">' +
+        '<a class="brand" href="/" aria-label="The Sapling Co. — A unit of Shefali Nursery, home">' +
+          '<img src="/assets/images/logo/logo-transparent.png" alt="The Sapling Co." width="180" height="56">' +
           '<span class="brand__unit" data-i18n="brand_unit">A unit of Shefali Nursery</span>' +
         "</a>" +
         '<nav class="nav-primary" aria-label="Primary">' + navMarkup() + "</nav>" +
         '<div class="header-actions">' +
+          '<button class="icon-btn" data-search-open aria-label="Search">' + svg("search") + "</button>" +
+          '<a class="icon-btn cart-link" href="/cart.html" data-cart-link aria-label="Cart">' + svg("cart") + '<span class="cart-badge" data-cart-count hidden>0</span></a>' +
           langControlMarkup() +
           '<button class="icon-btn" data-theme-toggle aria-label="Switch theme"></button>' +
           '<a class="btn btn--primary btn--sm hide-mobile" href="tel:' + BIZ.phoneTel + '" data-i18n="btn_call_us"></a>' +
@@ -133,11 +141,12 @@
       drawer.setAttribute("aria-label", "Mobile menu");
       drawer.innerHTML =
         '<div class="drawer-head">' +
-          '<img src="assets/images/logo/logo-transparent.png" alt="The Sapling Co." height="46">' +
+          '<img src="/assets/images/logo/logo-transparent.png" alt="The Sapling Co." height="46">' +
           '<button class="icon-btn" data-drawer-close aria-label="Close menu">' + svg("x") + "</button>" +
         "</div>" +
         navMarkup() +
         '<div class="drawer-foot">' + langControlMarkup() +
+        '<a class="btn btn--secondary" href="/cart.html" data-cart-link>' + svg("cart") + ' <span data-i18n="sc_cart">Cart</span> <span class="cart-badge" data-cart-count hidden>0</span></a>' +
         '<a class="btn btn--primary" href="tel:' + BIZ.phoneTel + '">' + svg("phone") + BIZ.phoneDisplay + "</a></div>";
       var scrim = document.createElement("div");
       scrim.className = "scrim";
@@ -152,20 +161,21 @@
     if (!host) return;
     host.className = "site-footer";
     var shop = CATEGORIES.map(function (c) {
-      return '<a href="inventory-' + c.slug + '.html" data-i18n="' + c.i + '"></a>';
+      return '<a href="/inventory-' + c.slug + '.html" data-i18n="' + c.i + '"></a>';
     }).join("");
     host.innerHTML =
       '<div class="container footer-top">' +
         '<div class="footer-brand">' +
-          '<img src="assets/images/logo/logo-transparent.png" alt="The Sapling Co." height="52">' +
+          '<img src="/assets/images/logo/logo-transparent.png" alt="The Sapling Co." height="52">' +
           '<p data-i18n="foot_tagline"></p>' +
         "</div>" +
         '<div class="footer-col"><h4 data-i18n="foot_shop"></h4>' + shop + "</div>" +
         '<div class="footer-col"><h4 data-i18n="foot_help"></h4>' +
-          '<a href="shipping.html" data-i18n="foot_ship"></a>' +
-          '<a href="care-guides.html" data-i18n="nav_care"></a>' +
-          '<a href="contact.html" data-i18n="nav_contact"></a>' +
-          '<a href="inventory.html" data-i18n="foot_browse"></a>' +
+          '<a href="/shop.html" data-i18n="nav_shop"></a>' +
+          '<a href="/shipping.html" data-i18n="foot_ship"></a>' +
+          '<a href="/care-guides.html" data-i18n="nav_care"></a>' +
+          '<a href="/contact.html" data-i18n="nav_contact"></a>' +
+          '<a href="/inventory.html" data-i18n="foot_browse"></a>' +
         "</div>" +
         '<div class="footer-col"><h4 data-i18n="foot_reach"></h4>' +
           '<div class="footer-contact">' +
@@ -408,6 +418,60 @@
   }
 
   /* ---------- Init ------------------------------------------------------- */
+  /* ---------- Commerce: cart badge + search overlay -------------------- */
+  // Global cart badge — reads the same localStorage the cart module writes,
+  // so the count shows on every page (even ones without the cart module).
+  function paintCartBadge() {
+    var n = 0;
+    try { (JSON.parse(localStorage.getItem("sapling-cart")) || []).forEach(function (i) { n += (i.qty || 0); }); } catch (e) {}
+    document.querySelectorAll("[data-cart-count]").forEach(function (el) { el.textContent = n; el.hidden = n === 0; });
+  }
+  var SEARCH_WORDS = ["money plant", "sago palm", "areca palm", "fruits", "snake plant", "peace lily", "aglaonema"];
+  function buildSearch() {
+    if (document.getElementById("searchOverlay")) return;
+    var o = document.createElement("div");
+    o.id = "searchOverlay"; o.className = "search-overlay"; o.setAttribute("aria-hidden", "true");
+    o.innerHTML =
+      '<div class="search-scrim" data-search-close></div>' +
+      '<div class="search-panel">' +
+        '<div class="search-row">' +
+          '<form class="searchbar" role="search" data-search-form>' + svg("search") +
+            '<input type="search" id="siteSearch" autocomplete="off" spellcheck="false" aria-label="Search plants">' +
+          "</form>" +
+          '<button type="button" class="icon-btn" data-search-close aria-label="Close search">' + svg("x") + "</button>" +
+        "</div>" +
+        '<p class="search-hint" data-i18n="sc_search_hint">Search by plant name, type or benefit.</p>' +
+      "</div>";
+    document.body.appendChild(o);
+    var input = o.querySelector("#siteSearch"), form = o.querySelector("[data-search-form]");
+    var wi = 0, timer = null, reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function pre() { return (I18N && I18N.current && I18N.current() === "bn") ? "খুঁজুন — " : "Search "; }
+    function tick() { input.setAttribute("placeholder", pre() + SEARCH_WORDS[wi++ % SEARCH_WORDS.length]); }
+    function openS() { o.classList.add("open"); o.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; tick(); if (!reduce) timer = setInterval(tick, 2200); setTimeout(function () { input.focus(); }, 60); }
+    function closeS() { o.classList.remove("open"); o.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; if (timer) { clearInterval(timer); timer = null; } }
+    document.addEventListener("click", function (e) {
+      if (e.target.closest("[data-search-open]")) { e.preventDefault(); openS(); }
+      else if (e.target.closest("[data-search-close]")) closeS();
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeS(); });
+    form.addEventListener("submit", function (e) { e.preventDefault(); var q = input.value.trim(); location.href = "/shop.html" + (q ? "?q=" + encodeURIComponent(q) : ""); });
+  }
+  // Branded fallback for images that fail to load (e.g. hotlinked photos that
+  // block cross-site loading). Replaced by our own CDN images later.
+  var PLACEHOLDER_IMG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI0UzRjBEOCIvPjxwYXRoIGQ9Ik0yMDAgMzIyVjE4MiIgc3Ryb2tlPSIjN0ZCRjMzIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjAwIDIwOGMwLTU1LTQ1LTEwMC0xMTAtMTAwIDAgNTUgNDUgMTAwIDExMCAxMDB6IiBmaWxsPSIjOUJENjQ5Ii8+PHBhdGggZD0iTTIwMCAxNzZjMC00NSAzNy04MiAxMDAtODIgMCA0NS0zNyA4Mi0xMDAgODJ6IiBmaWxsPSIjN0ZCRjMzIi8+PC9zdmc+";
+  function wireCommerce() {
+    buildSearch();
+    paintCartBadge();
+    document.addEventListener("sapling-cart-change", paintCartBadge);
+    document.addEventListener("error", function (e) {
+      var t = e.target;
+      if (t && t.tagName === "IMG" && !t.dataset.fallback && String(t.src).slice(0, 5) !== "data:") {
+        t.dataset.fallback = "1"; t.src = PLACEHOLDER_IMG;
+      }
+    }, true);
+    if (I18N) I18N.apply(I18N.current ? I18N.current() : "en"); // translate injected commerce chrome
+  }
+
   function init() {
     applyTheme(document.documentElement.getAttribute("data-theme") || "light");
     renderHeader();
@@ -423,6 +487,7 @@
     wireGuides();
     wireMap();
     wireReveal();
+    wireCommerce();
     window.SaplingIcon = svg;
   }
 

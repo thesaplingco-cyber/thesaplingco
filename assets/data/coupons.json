@@ -1,0 +1,4 @@
+[
+  { "code": "WELCOME10", "type": "percent", "value": 10, "minOrder": 499, "active": true, "expiry": "2026-12-31", "note": "EXAMPLE — replace with a Coupons tab in the sheet" },
+  { "code": "SAPLING50", "type": "flat", "value": 50, "minOrder": 799, "active": true, "expiry": "2026-12-31", "note": "EXAMPLE — replace with a Coupons tab in the sheet" }
+]
