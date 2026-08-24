@@ -182,6 +182,7 @@ notes += `- **Pricing:** Actual Price > Selling Price on all rows → shown as c
 notes += `- **Images:** hotlinked from cdn.shopify.com / commons.wikimedia.org. Move to your own CDN (R2) later.\n`;
 notes += `- **Variants:** ${products.filter(p => p.variants.length > 1).length} products have multiple pot/size variants (were showing as duplicate cards before grouping).\n`;
 notes += `- **Trait drift normalised (${drift.size}):** ` + [...drift.entries()].map(([o, c]) => `\`${o}\`→\`${c}\``).join(", ") + `\n`;
+mkdirSync("docs", { recursive: true });
 writeFileSync("docs/phase1-data-notes.md", notes);
 
 console.log(`✓ ${totalVariants} rows → ${products.length} products (${products.filter(p => p.variants.length > 1).length} with variants) → ${OUT_DIR}/catalogue.json`);
