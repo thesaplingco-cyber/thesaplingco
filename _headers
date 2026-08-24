@@ -1,0 +1,16 @@
+# Cloudflare Pages headers.
+# CSS/JS/data change on every deploy but keep the same filenames, so they must
+# revalidate each load (fast 304 when unchanged) — otherwise browsers serve a
+# stale copy for hours after a deploy. HTML is already max-age=0 on Pages.
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/data/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Images/video rarely change and are large — let them cache for a day.
+/assets/images/*
+  Cache-Control: public, max-age=86400
+/assets/video/*
+  Cache-Control: public, max-age=86400
