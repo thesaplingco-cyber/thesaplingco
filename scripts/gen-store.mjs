@@ -158,7 +158,7 @@ function buildShop() {
 
   const body = `
     ${offersCarousel()}
-    <section class="section container--wide">
+    <section class="section container--wide" style="padding-top: clamp(1.1rem, 2.5vw, 1.6rem)">
       <div class="section-head" style="align-items:flex-end">
         <div>
           <span class="eyebrow" data-i18n="brand_unit">A unit of Shefali Nursery</span>

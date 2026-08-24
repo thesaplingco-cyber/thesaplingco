@@ -36,9 +36,11 @@
 /* wider shell for the shop so the grid uses the available width */
 .container--wide { max-width: 1440px; margin-inline: auto; padding-inline: var(--gutter); }
 
-/* shop offers carousel: full width, 21:9 (shorter than the tall home hero) */
-.hero--ratio { height: auto; aspect-ratio: 21 / 9; max-height: 68vh; }
-@media (max-width: 720px) { .hero--ratio { aspect-ratio: auto; height: clamp(320px, 56vh, 440px); } }
+/* shop offers carousel: ALWAYS full page width, shorter than the tall home hero.
+   NOTE: aspect-ratio + max-height makes the box shrink its WIDTH (white gap on
+   the right). So we size by height only (≈21:9 via 42.86vw, capped) and let the
+   slide media cover the full-bleed box. */
+.hero.hero--ratio { height: clamp(340px, 42.86vw, 520px); aspect-ratio: auto; max-height: none; }
 .product-card { display: flex; flex-direction: column; overflow: hidden; }
 .product-card__media {
   position: relative; aspect-ratio: 1/1; background: var(--tile-green); display: block; overflow: hidden;
