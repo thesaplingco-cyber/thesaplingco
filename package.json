@@ -1,0 +1,9 @@
+{
+  "name": "thesaplingco",
+  "private": true,
+  "description": "The Sapling Co. storefront — static site generated from the 'Phase 1' Google Sheet.",
+  "scripts": {
+    "build": "node scripts/build-store.mjs && node scripts/gen-store.mjs",
+    "sync": "node --env-file=.env scripts/build-store.mjs && node scripts/gen-store.mjs"
+  }
+}
