@@ -1,0 +1,21 @@
+# The Sapling Co.
+
+> A unit of Shefali Nursery — a real plant nursery in Dankuni, Hooghly, West Bengal, growing and hand-delivering indoor plants, fruit saplings and flowering plants across India. Orders are placed over WhatsApp (+91 89022 62452); prices are in INR.
+
+## Shop
+- [Shop all plants](https://thesaplingco.in/shop): the full catalogue with filters, sort and search
+- [Cart & WhatsApp checkout](https://thesaplingco.in/cart)
+
+## Discover
+- [Indoor plants](https://thesaplingco.in/shop?category=Indoor)
+- [Fruit trees](https://thesaplingco.in/shop?category=Fruit)
+- [Outdoor & landscape](https://thesaplingco.in/shop?category=Gardenscapes)
+- [Air-purifying plants](https://thesaplingco.in/shop?goal=air-purifying)
+- [Low-maintenance plants](https://thesaplingco.in/shop?goal=low-maintenance)
+- [Pet-friendly plants](https://thesaplingco.in/shop?goal=pet-friendly)
+
+## About
+- [Home](https://thesaplingco.in/)
+- [Our inventory](https://thesaplingco.in/inventory.html)
+- [Care guides](https://thesaplingco.in/care-guides.html)
+- [Contact](https://thesaplingco.in/contact.html)

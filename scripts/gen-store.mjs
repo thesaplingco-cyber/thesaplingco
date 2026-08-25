@@ -28,6 +28,9 @@ const vhref = p => p + (V[p] ? `?v=${V[p]}` : "");
 const escT = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const escA = s => String(s ?? "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const inr = n => "₹" + Number(n || 0).toLocaleString("en-IN");
+// Ask Shopify's CDN for a right-sized image (huge LCP win while we still use the
+// sourced images). Leaves non-Shopify URLs (future R2, Wikimedia) untouched.
+const imgURL = (u, w) => (u && /cdn\.shopify\.com/i.test(u)) ? u + (u.includes("?") ? "&" : "?") + "width=" + w : u;
 
 const BOOT = `<script>
     (function () { var d = document.documentElement; d.classList.add("js");
@@ -84,7 +87,7 @@ function cardPrice(p) {
 }
 function media(p) {
   const img = p.image
-    ? `<img src="${escA(p.image)}" alt="${escA(p.name)}" loading="lazy" width="400" height="400">`
+    ? `<img src="${escA(imgURL(p.image, 440))}" srcset="${escA(imgURL(p.image, 340))} 340w, ${escA(imgURL(p.image, 680))} 680w" sizes="(max-width:560px) 46vw, 210px" alt="${escA(p.name)}" loading="lazy" width="400" height="400">`
     : `<span class="card__ph" style="display:grid;place-items:center;height:100%"><span>${escT(p.varietyGroup || p.category)}</span></span>`;
   const oos = !p.inStock ? `<span class="product-card__oos" data-i18n="sc_oos">Out of stock</span>` : "";
   const badge = p.discount > 0 && p.priceMin === p.priceMax ? `<div class="product-card__badges"><span class="badge badge--lime">${p.discount}% off</span></div>` : "";
@@ -92,7 +95,7 @@ function media(p) {
 }
 function controlAttrs(p, v) {
   return `data-sku="${escA(v.sku)}" data-name="${escA(p.name)}" data-price="${v.price}" data-size="${escA(v.size)}" ` +
-    `data-slug="${escA(p.slug)}" data-image="${escA(v.image || p.image)}"` +
+    `data-slug="${escA(p.slug)}" data-image="${escA(imgURL(v.image || p.image, 220))}"` +
     (p.variants.length > 1 ? ` data-variant="${escA(v.label)}"` : "");
 }
 function control(p, v) {
@@ -186,10 +189,10 @@ function buildShop() {
       <div class="shop-layout">
         <aside class="shop-filters" aria-label="Filters">
           <div class="shop-filters__close"><button class="icon-btn" data-filters-close aria-label="Close filters"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-          <div class="filter-group"><h4 data-i18n="shop_category">Category</h4>${catFilters}</div>
-          <div class="filter-group"><h4 data-i18n="shop_traits">Good for</h4>${goalFilters}</div>
-          <div class="filter-group"><h4 data-i18n="shop_size">Size</h4>${sizeFilters}</div>
-          <div class="filter-group"><h4>Collection</h4>${subFilters}</div>
+          <div class="filter-group"><p class="fg-label" data-i18n="shop_category">Category</p>${catFilters}</div>
+          <div class="filter-group"><p class="fg-label" data-i18n="shop_traits">Good for</p>${goalFilters}</div>
+          <div class="filter-group"><p class="fg-label" data-i18n="shop_size">Size</p>${sizeFilters}</div>
+          <div class="filter-group"><p class="fg-label">Collection</p>${subFilters}</div>
           <div class="filter-group"><label class="filter-check"><input type="checkbox" id="f-instock"> <span data-i18n="shop_instock">In stock only</span></label></div>
           <button class="btn btn--secondary btn--block" id="shop-clear" data-i18n="shop_clear" style="margin-top:1rem">Clear all</button>
         </aside>
@@ -289,7 +292,7 @@ function quickFacts(p) {
 /* ---- PRODUCT ------------------------------------------------------------ */
 function galleryThumbs(p) {
   if (p.images.length > 1) return `<div class="pdp-thumbs">` + p.images.map((src, i) =>
-    `<button class="pdp-thumb${i === 0 ? " is-active" : ""}" data-full="${escA(src)}"><img src="${escA(src)}" alt="" loading="lazy"></button>`).join("") + `</div>`;
+    `<button class="pdp-thumb${i === 0 ? " is-active" : ""}" data-full="${escA(imgURL(src, 900))}"><img src="${escA(imgURL(src, 140))}" alt="" loading="lazy"></button>`).join("") + `</div>`;
   return `<p class="pdp-more" data-i18n="pdp_more_img">More photos coming soon</p>`;
 }
 function variantSelector(p) {
@@ -308,8 +311,8 @@ function buildProduct(p) {
     return [...new Map(r.map(x => [x.slug, x])).values()].slice(0, 10);
   })();
   const tags = p.traits.length ? `<div class="pdp-tags">${p.traits.map(tr => `<a class="chip chip--lilac" href="/shop.html?trait=${escA(tr)}">${escT(tr)}</a>`).join("")}</div>` : "";
-  const buyData = `data-sku="${escA(v0.sku)}" data-name="${escA(p.name)}" data-price="${v0.price}" data-size="${escA(v0.size)}" data-slug="${escA(p.slug)}" data-image="${escA(v0.image || p.image)}"${p.variants.length > 1 ? ` data-variant="${escA(v0.label)}"` : ""}`;
-  const variantJSON = JSON.stringify({ name: p.name, slug: p.slug, image: p.image, variants: p.variants });
+  const buyData = `data-sku="${escA(v0.sku)}" data-name="${escA(p.name)}" data-price="${v0.price}" data-size="${escA(v0.size)}" data-slug="${escA(p.slug)}" data-image="${escA(imgURL(v0.image || p.image, 220))}"${p.variants.length > 1 ? ` data-variant="${escA(v0.label)}"` : ""}`;
+  const variantJSON = JSON.stringify({ name: p.name, slug: p.slug, image: imgURL(p.image, 600), variants: p.variants.map(v => ({ ...v, image: imgURL(v.image || p.image, 600) })) });
 
   const jsonld = `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "Product",
@@ -326,7 +329,7 @@ function buildProduct(p) {
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/shop.html?category=${escA(p.category)}">${escT(p.category)}</a> › <span>${escT(p.name)}</span></nav>
       <div class="pdp">
         <div class="pdp-gallery">
-          <div class="pdp-main">${p.discount > 0 && p.priceMin === p.priceMax ? `<div class="product-card__badges"><span class="badge badge--lime">${p.discount}% off</span></div>` : ""}<img id="pdp-main-img" src="${escA(p.image || "")}" alt="${escA(p.name)}"></div>
+          <div class="pdp-main">${p.discount > 0 && p.priceMin === p.priceMax ? `<div class="product-card__badges"><span class="badge badge--lime">${p.discount}% off</span></div>` : ""}<img id="pdp-main-img" src="${escA(imgURL(p.image, 600) || "")}" srcset="${escA(imgURL(p.image, 600))} 600w, ${escA(imgURL(p.image, 1000))} 1000w" sizes="(max-width:900px) 92vw, 520px" alt="${escA(p.name)}" width="600" height="600"></div>
           ${galleryThumbs(p)}
         </div>
         <div class="pdp-info">
