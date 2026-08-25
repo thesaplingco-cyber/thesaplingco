@@ -30,12 +30,14 @@
   var buy = document.querySelector("[data-buy-now]");
   var inr = function (n) { return "₹" + Number(n || 0).toLocaleString("en-IN"); };
 
-  function select(i) {
+  function select(i, initial) {
     var v = variants[i]; if (!v) return;
     chips.forEach(function (c, ci) { c.classList.toggle("is-active", ci === i); });
     if (priceEl) priceEl.innerHTML = '<span class="price__now">' + inr(v.price) + "</span>" +
       (v.mrp > v.price ? '<span class="price__mrp">' + inr(v.mrp) + '</span><span class="price__off">' + v.discount + "% off</span>" : "");
-    if (v.image && main) main.setAttribute("src", v.image);
+    // on a user switch, replace the image and drop the stale srcset so the new
+    // variant photo wins (on initial load we keep the generator's responsive srcset)
+    if (v.image && main && !initial) { main.removeAttribute("srcset"); main.setAttribute("src", v.image); }
     [ctl, buy].forEach(function (el) {
       if (!el) return;
       el.setAttribute("data-sku", v.sku);
@@ -49,7 +51,7 @@
   }
   chips.forEach(function (c, i) { c.addEventListener("click", function () { if (!c.hasAttribute("disabled")) select(i); }); });
   var def = variants.map(function (v) { return v.inStock; }).indexOf(true);
-  select(def < 0 ? 0 : def);
+  select(def < 0 ? 0 : def, true);
 })();
 
 /* 3. "Order on WhatsApp" — ensure current variant is in the cart, then go */
