@@ -120,7 +120,7 @@
       '<a class="skip-link" href="#main">Skip to content</a>' +
       '<div class="container header-top">' +
         '<a class="brand" href="/" aria-label="The Sapling Co. — A unit of Shefali Nursery, home">' +
-          '<img src="/assets/images/logo/logo-transparent.png" alt="The Sapling Co." width="180" height="56">' +
+          '<img src="/assets/images/logo/logo-transparent.png?v=2" alt="The Sapling Co." width="180" height="56">' +
           '<span class="brand__unit" data-i18n="brand_unit">A unit of Shefali Nursery</span>' +
         "</a>" +
         '<nav class="nav-primary" aria-label="Primary">' + navMarkup() + "</nav>" +
@@ -141,7 +141,7 @@
       drawer.setAttribute("aria-label", "Mobile menu");
       drawer.innerHTML =
         '<div class="drawer-head">' +
-          '<img src="/assets/images/logo/logo-transparent.png" alt="The Sapling Co." height="46">' +
+          '<img src="/assets/images/logo/logo-transparent.png?v=2" alt="The Sapling Co." height="46">' +
           '<button class="icon-btn" data-drawer-close aria-label="Close menu">' + svg("x") + "</button>" +
         "</div>" +
         navMarkup() +
@@ -166,7 +166,7 @@
     host.innerHTML =
       '<div class="container footer-top">' +
         '<div class="footer-brand">' +
-          '<img src="/assets/images/logo/logo-transparent.png" alt="The Sapling Co." height="52">' +
+          '<img src="/assets/images/logo/logo-transparent.png?v=2" alt="The Sapling Co." height="52">' +
           '<p data-i18n="foot_tagline"></p>' +
         "</div>" +
         '<div class="footer-col"><h4 data-i18n="foot_shop"></h4>' + shop + "</div>" +
